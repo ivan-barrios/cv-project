@@ -8,20 +8,20 @@ class App extends Component {
 
     this.state = {
       general: {
-        name: "I",
-        email: "a",
-        phoneNum: "",
+        name: "Ivancito",
+        email: "ivancito@gmail.com",
+        phoneNum: "2213069733",
       },
       educational: {
-        schoolName: "",
-        titleOfStudy: "",
-        dateOfStudy: "",
+        schoolName: "Unlp",
+        titleOfStudy: "Comp ing",
+        dateOfStudy: "2025",
       },
       practical: {
-        companyName: "",
-        positionTitle: "",
-        mainTasks: "",
-        dateStartEnd: "",
+        companyName: "Google",
+        positionTitle: "Project Developer",
+        mainTasks: "All",
+        dateStartEnd: "Today",
       },
     };
 
@@ -34,7 +34,29 @@ class App extends Component {
           phoneNum: document.getElementById("phoneNum").value,
         },
       });
-      console.log(this.state.general);
+    };
+
+    this.handleEducationalSubmit = (e) => {
+      e.preventDefault();
+      this.setState({
+        educational: {
+          schoolName: document.getElementById("schoolName").value,
+          titleOfStudy: document.getElementById("titleOfStudy").value,
+          dateOfStudy: document.getElementById("dateOfStudy").value,
+        },
+      });
+    };
+
+    this.handlePracticalSubmit = (e) => {
+      e.preventDefault();
+      this.setState({
+        practical: {
+          companyName: document.getElementById("companyName").value,
+          positionTitle: document.getElementById("positionTitle").value,
+          mainTasks: document.getElementById("mainTasks").value,
+          dateStartEnd: document.getElementById("startEnd").value,
+        },
+      });
     };
   }
 
@@ -42,7 +64,12 @@ class App extends Component {
     console.log("rendered");
     return (
       <div>
-        <Form values={this.state} onSubmitGeneral={this.handleGeneralSubmit} />
+        <Form
+          values={this.state}
+          onSubmitGeneral={this.handleGeneralSubmit}
+          onSubmitEducational={this.handleEducationalSubmit}
+          onSubmitPractical={this.handlePracticalSubmit}
+        />
         <DisplayInfo values={this.state} />
       </div>
     );

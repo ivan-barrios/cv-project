@@ -11,8 +11,14 @@ const Form = (props) => {
         values={general}
         onSubmitGeneral={props.onSubmitGeneral}
       />
-      <EducationalExpForm values={educational} />
-      <PracticalExpForm values={practical} />
+      <EducationalExpForm
+        values={educational}
+        onSubmitEducational={props.onSubmitEducational}
+      />
+      <PracticalExpForm
+        values={practical}
+        onSubmitPractical={props.onSubmitPractical}
+      />
     </div>
   );
 };

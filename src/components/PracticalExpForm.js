@@ -1,7 +1,7 @@
-const PracticalExpForm = () => {
+const PracticalExpForm = (props) => {
   return (
     <div>
-      <form>
+      <form onSubmit={props.onSubmitPractical}>
         <label htmlFor="companyName">Company Name</label>
         <input type="text" id="companyName" placeholder="Your company name" />
         <label htmlFor="positionTitle">Position Title</label>

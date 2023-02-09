@@ -1,9 +1,9 @@
-const EducationalExpForm = () => {
+const EducationalExpForm = (props) => {
   return (
     <div>
-      <form>
+      <form onSubmit={props.onSubmitEducational}>
         <label htmlFor="schoolName">School Name</label>
-        <input type="text" id="schooleName" placeholder="Your school name" />
+        <input type="text" id="schoolName" placeholder="Your school name" />
         <label htmlFor="titleOfStudy">Title of Study</label>
         <input
           type="text"
